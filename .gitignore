@@ -15,6 +15,7 @@
 .metadata
 .externalToolBuilders
 test-output
+**/.recommenders/**
 
 # Idea
 .idea
