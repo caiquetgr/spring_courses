@@ -1,4 +1,19 @@
+
+
 logging:
   level:
     org:
       springframework: INFO
+
+welcome:
+  message: "Welcome to this service!"
+
+spring:
+  profiles:
+    active: dev
+
+
+basic:
+  value: true
+  message: 'Welcome to in28minutes'
+  number: 200
