@@ -14,7 +14,9 @@ import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.net.URI;
+import java.nio.charset.Charset;
 import java.util.Arrays;
+import java.util.Base64;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -32,10 +34,22 @@ public class SurveyControllerIT {
         JSONAssert.assertEquals("{id:1}", "{id:1, nome:'Caique'}", false);
     }
 
+    private HttpHeaders createHttpHeaders(String user, String password) {
+        HttpHeaders httpHeaders = new HttpHeaders();
+
+        String auth = user + ":" + password;
+
+        byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes(Charset.forName("US-ASCII")));
+        String authorization = "Basic " + new String(encodedAuth);
+
+        httpHeaders.add("Authorization", authorization);
+        return httpHeaders;
+    }
+
     @Before
     public void before() {
-        httpHeaders = new HttpHeaders();
-        httpHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        this.httpHeaders = createHttpHeaders("user1", "secret1");
+        this.httpHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
     }
 
     @Test
