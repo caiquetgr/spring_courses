@@ -21,6 +21,27 @@ public class UserCommandLineRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         userRepository.save(new User("Caique", "Admin"));
         userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Caique", "Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Caique", "Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Caique", "Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Caique", "Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Caique", "Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Caique", "Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Caique", "Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
+        userRepository.save(new User("Mireli", "Backoffice Admin"));
 
         for (User u : userRepository.findAll()) {
             log.info("{}", u);
